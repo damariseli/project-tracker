@@ -329,10 +329,8 @@
         <div class="log-actions">
           <div class="log-actions-left">
             <button class="btn-icon" id="rec-btn" onclick="toggleRecording()">🎙 Grabar audio</button>
-            <label class="file-label-wrap">
-              <span>📂 Restaurar</span>
-              <input type="file" accept=".zip,application/zip,application/x-zip-compressed" onchange="restoreZip(this)" />
-            </label>
+            <button class="btn-icon" onclick="document.getElementById('log-file-input').click()">📎 Adjuntar archivo
+              <input type="file" id="log-file-input" style="display:none" onchange="attachFile(this)" accept="image/*,application/pdf,.doc,.docx,.txt,.xls,.xlsx,.ppt,.pptx" />
             </button>
           </div>
           <button class="btn-primary" onclick="saveLogEntry()">Guardar entrada ✦</button>
