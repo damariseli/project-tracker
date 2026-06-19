@@ -290,8 +290,10 @@
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
           <button class="btn-export" onclick="exportBitacora()">↗ Exportar para Claude</button>
           <button class="btn-icon" onclick="backupZip()" style="background:var(--green-bg);color:var(--green);border-color:rgba(16,185,129,0.25);">💾 Hacer backup</button>
-          <button class="btn-icon" onclick="document.getElementById('restore-input').click()">📂 Restaurar backup</button>
-          <input type="file" id="restore-input" accept=".zip" style="display:none" onchange="restoreZip(this)" />
+          <label class="file-label-wrap">
+            <span class="btn-restore" style="display:flex;align-items:center;justify-content:center;">📂 Restaurar</span>
+            <input type="file" accept=".zip,application/zip,application/x-zip-compressed" onchange="restoreZip(this)" />
+</label>
         </div>
       </div>
 
@@ -304,8 +306,10 @@
         <div class="log-actions">
           <div class="log-actions-left">
             <button class="btn-icon" id="rec-btn" onclick="toggleRecording()">🎙 Grabar audio</button>
-            <button class="btn-icon" onclick="document.getElementById('log-file-input').click()">📎 Adjuntar archivo
-              <input type="file" id="log-file-input" style="display:none" onchange="attachFile(this)" accept="image/*,application/pdf,.doc,.docx,.txt,.xls,.xlsx,.ppt,.pptx" />
+            <label class="file-label-wrap">
+              <span>📂 Restaurar</span>
+              <input type="file" accept=".zip,application/zip,application/x-zip-compressed" onchange="restoreZip(this)" />
+            </label>
             </button>
           </div>
           <button class="btn-primary" onclick="saveLogEntry()">Guardar entrada ✦</button>
